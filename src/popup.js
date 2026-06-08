@@ -252,25 +252,30 @@ function render () {
 		const star = slot && i === defaultSlot ? '<span class="star">&#9733;</span>' : "";
 		const dim = slot?.label ? `<span class="dim">${esc(slot.label)}</span>` : "";
 		const edit = slot
-			? `<span class="edit-btn" data-action="edit" data-index="${i}">${PENCIL}</span>`
+			? `<button class="edit" aria-label="Edit preset" data-action="edit" data-index="${i}">${PENCIL}</button>`
 			: "";
 		const cls = slot ? "row" : "row empty-slot";
 		const text = slot ? `${slot.w} &times; ${slot.h}` : "Add preset…";
 
-		html += `<button class="${cls}" data-action="row" data-index="${i}">
-      <kbd>${i + 1}</kbd>
-      <span class="label">${text}</span>
-      ${dim}${star}${edit}
-    </button>`;
+		html += `<div class="${cls}">
+      <button data-action="row" data-index="${i}">
+        <kbd>${i + 1}</kbd>
+        <span class="label">${text}</span>
+        ${dim}${star}
+      </button>
+      ${edit}
+    </div>`;
 	}
 
 	const star = defaultSlot === "auto" ? '<span class="star">&#9733;</span>' : "";
-	const auto = `<button class="row auto-row" data-action="auto">
-    <kbd>0</kbd>
-    <span class="label">${screen.availWidth} &times; ${screen.availHeight}</span>
-    <span class="dim">Fit screen</span>
-    ${star}
-  </button>`;
+	const auto = `<div class="row auto-row">
+    <button data-action="auto">
+      <kbd>0</kbd>
+      <span class="label">${screen.availWidth} &times; ${screen.availHeight}</span>
+      <span class="dim">Fit screen</span>
+      ${star}
+    </button>
+  </div>`;
 
 	root.innerHTML = auto + html;
 	if (editing >= 0) {
@@ -317,7 +322,6 @@ function bindEvents () {
 		const idx = target.dataset.index != null ? +target.dataset.index : editing;
 
 		if (action === "edit") {
-			e.stopPropagation();
 			openEditor(idx);
 		}
 		else if (action === "row") {
