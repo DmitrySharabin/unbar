@@ -268,7 +268,7 @@ function render () {
 	const auto = `<button class="row auto-row" data-action="auto">
     <kbd>0</kbd>
     <span class="label">${screen.availWidth} &times; ${screen.availHeight}</span>
-    <span class="dim">Auto</span>
+    <span class="dim">Fit screen</span>
     ${star}
   </button>`;
 
