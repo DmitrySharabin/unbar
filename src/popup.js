@@ -304,7 +304,7 @@ function editorHTML (index, slot) {
     <div class="actions">
       <button type="button" class="save" data-action="save">Save</button>
       <button type="button" class="cancel" data-action="cancel">Cancel</button>
-      ${slot ? `<button type="button" class="clear" data-action="clear" title="Remove this preset">${TRASH}</button>` : ""}
+      ${slot ? `<button type="button" class="delete" data-action="clear" title="Remove this preset">${TRASH}</button>` : ""}
     </div>
   </div>`;
 }
