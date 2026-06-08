@@ -66,21 +66,6 @@ To produce the `.zip` for Chrome Web Store submission:
 
 This zips the contents of `src/` into `unbar.zip` at the repo root.
 
-## Project structure
-
-```
-unbar/
-├── src/                  # the extension (load this folder unpacked)
-│   ├── manifest.json
-│   ├── service_worker.js # keyboard-shortcut handler
-│   ├── popup.html        # popup markup + styles
-│   ├── popup.js          # popup logic
-│   └── icons/
-├── store/                # Chrome Web Store listing assets & screenshots
-├── build.sh
-├── PRIVACY.md
-└── LICENSE
-```
 
 ## License
 
