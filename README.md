@@ -6,6 +6,10 @@ Unbar moves your active Chrome tab into a minimal popup window with no address b
 
 Built originally to give [Inspire.js](https://inspirejs.org) presentations a distraction-free presenter/projector window, but it works on any page.
 
+| Pick a size | Hover to edit | Edit a preset |
+|:-----------:|:-------------:|:-------------:|
+| ![Preset list](store/screenshot-popup.png) | ![Hover state](store/screenshot-hover.png) | ![Preset editor](store/screenshot-editor.png) |
+
 ## Why
 
 Chrome removed the ability to hide the address bar years ago (the old `Compact Navigation` flag is gone), and extensions can't touch native browser chrome. The one exception is `chrome.windows.create({ type: "popup" })`, which opens a window without an address bar. Unbar uses that to relocate your current tab into a clean window on demand.
@@ -14,7 +18,7 @@ Chrome removed the ability to hide the address bar years ago (the old `Compact N
 
 - **One-click unbar** — click the toolbar icon, pick a size, done.
 - **Size presets** — keys `1`–`9` select a resolution. Four sensible defaults out of the box (1280×800, 1920×1080, 1024×768, 1440×900).
-- **Fully editable** — every slot can be edited in place: dimensions, label, and which is the default. Up to nine.
+- **Fully editable** — every slot can be edited in place: dimensions and label. Up to nine. The default (★) is whichever preset you used last.
 - **Aspect-ratio lock** — a chain toggle links width and height so changing one updates the other. Recognizes common ratios (16:9, 16:10, 4:3, 21:9, 3:2, 5:4, 1:1, 32:9).
 - **Keyboard shortcut** — `Ctrl+Shift+U` (Windows/Linux) or `Cmd+Shift+U` (macOS) instantly unbars at the last-used size, no popup. Remap at `chrome://extensions/shortcuts`.
 - **Persistent** — your presets are saved across sessions via `chrome.storage.local`.
