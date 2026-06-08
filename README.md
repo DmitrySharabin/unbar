@@ -2,6 +2,8 @@
 
 **Pop the current tab into a clean window — no address bar, no tabs.**
 
+<img src="store/screenshot-readme.png" alt="Before and after: browser chrome removed" width="640">
+
 Unbar moves your active Chrome tab into a minimal popup window with no address bar, tab strip, or bookmarks bar. The page doesn't reload, so scroll position, form input, and JavaScript state are all preserved — it's the same tab, just in a cleaner frame.
 
 Built originally to give [Inspire.js](https://inspirejs.org) presentations a distraction-free presenter/projector window, but it works on any page.
