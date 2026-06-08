@@ -51,6 +51,17 @@ async function doUnbar(index) {
   window.close();
 }
 
+async function doUnbarAuto() {
+  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  if (!tab) return;
+  const w = screen.availWidth;
+  const h = screen.availHeight;
+  defaultSlot = "auto";
+  await chrome.storage.local.set({ defaultSlot });
+  await chrome.windows.create({ tabId: tab.id, type: "popup", width: w, height: h });
+  window.close();
+}
+
 function openEditor(index) {
   editingIndex = index;
   ratioLocked = false;
@@ -93,11 +104,13 @@ async function handleClear() {
   const defaultRef = slots[defaultSlot];
   slots.splice(editingIndex, 1);
   slots.push(null);
-  if (defaultRef && slots.includes(defaultRef)) {
-    defaultSlot = slots.indexOf(defaultRef);
-  } else {
-    const first = slots.findIndex(Boolean);
-    defaultSlot = first < 0 ? 0 : first;
+  if (defaultSlot !== "auto") {
+    if (defaultRef && slots.includes(defaultRef)) {
+      defaultSlot = slots.indexOf(defaultRef);
+    } else {
+      const first = slots.findIndex(Boolean);
+      defaultSlot = first < 0 ? 0 : first;
+    }
   }
   await saveSlots();
   closeEditor();
@@ -186,7 +199,15 @@ function render() {
     </button>`;
   }
 
-  container.innerHTML = html;
+  const autoStar = defaultSlot === "auto" ? '<span class="star">&#9733;</span>' : "";
+  const autoRow = `<button class="row auto-row" data-action="auto">
+    <span class="key">0</span>
+    <span class="label">${screen.availWidth} &times; ${screen.availHeight}</span>
+    <span class="dim">Auto</span>
+    ${autoStar}
+  </button>`;
+
+  container.innerHTML = autoRow + html;
   if (editingIndex >= 0) updateChainUI();
 }
 
@@ -234,6 +255,7 @@ function setupDelegation() {
     else if (action === "save") handleSave();
     else if (action === "cancel") closeEditor();
     else if (action === "clear") handleClear();
+    else if (action === "auto") doUnbarAuto();
     else if (action === "chain") handleChainToggle();
   });
 
@@ -252,6 +274,7 @@ function setupDelegation() {
 document.addEventListener("keydown", (e) => {
   if (editingIndex >= 0) return;
   if (e.target.tagName === "INPUT") return;
+  if (e.key === "0") { e.preventDefault(); doUnbarAuto(); return; }
   const num = parseInt(e.key);
   if (num >= 1 && num <= 9) {
     if (slots[num - 1]) {
