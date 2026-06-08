@@ -44,6 +44,8 @@ _(Link to be added once published.)_
 3. Enable **Developer mode** (top-right toggle).
 4. Click **Load unpacked** and select the `src/` folder.
 
+Requires Chrome 120+ (for CSS nesting support).
+
 ## Usage
 
 1. Navigate to any page.
