@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Unbar — README Screenshot</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+	width: 960px;
+	height: 420px;
+	overflow: hidden;
+	background: linear-gradient(160deg, #f5f2ed, #eae7e1);
+	font-family: "DM Sans", system-ui, sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 32px;
+	position: relative;
+}
+
+body::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	opacity: 0.35;
+	background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+	pointer-events: none;
+}
+
+.group {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+}
+
+.tag {
+	font-size: 10px;
+	font-weight: 600;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+.tag-before { color: #b85450; }
+.tag-after { color: #2d8a54; }
+
+.win {
+	width: 380px;
+	border-radius: 10px;
+	overflow: hidden;
+	background: white;
+}
+
+.win-before {
+	opacity: 0.9;
+	box-shadow:
+		0 1px 4px rgba(0,0,0,0.04),
+		0 6px 20px rgba(0,0,0,0.07),
+		0 16px 40px rgba(0,0,0,0.05);
+}
+
+.win-after {
+	box-shadow:
+		0 2px 8px rgba(0,0,0,0.07),
+		0 10px 28px rgba(0,0,0,0.11),
+		0 24px 52px rgba(0,0,0,0.07);
+}
+
+.lights {
+	display: flex;
+	gap: 5px;
+	flex-shrink: 0;
+}
+
+.dot {
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+}
+
+.dot-close { background: #ff5f57; }
+.dot-min { background: #febc2e; }
+.dot-max { background: #28c840; }
+
+.tabs {
+	display: flex;
+	align-items: flex-end;
+	height: 28px;
+	background: #dedbd6;
+	padding: 0 8px;
+	gap: 5px;
+}
+
+.tabs .lights {
+	align-self: center;
+	margin-right: 3px;
+}
+
+.tab {
+	display: flex;
+	align-items: center;
+	height: 23px;
+	padding: 0 10px;
+	background: #f0eee9;
+	border-radius: 6px 6px 0 0;
+	font-size: 9px;
+	color: #555;
+	gap: 5px;
+}
+
+.tab-favicon {
+	width: 10px;
+	height: 10px;
+	background: #c8c4be;
+	border-radius: 2px;
+}
+
+.tab-new {
+	color: #aaa;
+	font-size: 12px;
+	padding: 0 4px;
+	align-self: center;
+}
+
+.toolbar {
+	display: flex;
+	align-items: center;
+	height: 28px;
+	background: #f0eee9;
+	padding: 0 8px;
+	gap: 5px;
+	border-bottom: 1px solid #e0ddd7;
+}
+
+.nav {
+	color: #b0aca6;
+	font-size: 11px;
+	letter-spacing: -1px;
+}
+
+.url-bar {
+	flex: 1;
+	height: 20px;
+	background: #e6e3dd;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	padding: 0 8px;
+	font-size: 9px;
+	color: #888;
+}
+
+.ext-icons {
+	display: flex;
+	gap: 4px;
+}
+
+.ext-icon {
+	width: 11px;
+	height: 11px;
+	background: #d0cdc7;
+	border-radius: 2px;
+}
+
+.bookmarks {
+	display: flex;
+	align-items: center;
+	height: 22px;
+	background: #f0eee9;
+	padding: 0 8px;
+	gap: 10px;
+	border-bottom: 1px solid #e0ddd7;
+	font-size: 9px;
+	color: #999;
+}
+
+.bm-icon {
+	display: inline-block;
+	width: 9px;
+	height: 9px;
+	background: #d0cdc7;
+	border-radius: 2px;
+	vertical-align: -1px;
+	margin-right: 2px;
+}
+
+.chrome-zone {
+	position: relative;
+}
+
+.chrome-zone::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border: 2px dashed #cc5550;
+	background: rgba(200, 70, 65, 0.04);
+	pointer-events: none;
+	border-radius: 10px 10px 0 0;
+}
+
+.titlebar {
+	display: flex;
+	align-items: center;
+	height: 30px;
+	background: #f0eee9;
+	padding: 0 10px;
+	border-bottom: 1px solid #e0ddd7;
+}
+
+.titlebar .lights {
+	margin-right: 6px;
+}
+
+.titlebar-text {
+	flex: 1;
+	text-align: center;
+	font-size: 10px;
+	color: #555;
+	font-weight: 500;
+	margin-right: 38px;
+}
+
+.space-zone {
+	position: relative;
+}
+
+.space-zone::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border: 2px dashed #2d8a54;
+	background: rgba(42, 140, 80, 0.03);
+	pointer-events: none;
+	border-radius: 0 0 10px 10px;
+}
+
+.slide {
+	padding: 16px 20px;
+	background: white;
+}
+
+.slide-heading {
+	font-size: 13px;
+	font-weight: 600;
+	color: #1a1a1a;
+	margin-bottom: 8px;
+}
+
+.line {
+	height: 6px;
+	background: #eae7e2;
+	border-radius: 3px;
+	margin-bottom: 6px;
+}
+
+.block {
+	background: #f5f3ef;
+	border-radius: 5px;
+	padding: 10px;
+	margin-top: 8px;
+}
+
+.block-line {
+	height: 4px;
+	background: #dbd8d3;
+	border-radius: 2px;
+	margin-bottom: 4px;
+}
+
+.block-line:last-child { margin-bottom: 0; }
+
+.arrow {
+	color: #4a8fd4;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 5px;
+}
+
+.arrow svg {
+	width: 30px;
+	height: 30px;
+	filter: drop-shadow(0 2px 4px rgba(74, 143, 212, 0.25));
+}
+
+.arrow-label {
+	font-size: 9px;
+	font-weight: 600;
+	color: #4a8fd4;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+</style>
+</head>
+<body>
+
+<div class="group">
+	<span class="tag tag-before">Before</span>
+	<div class="win win-before">
+		<div class="chrome-zone">
+			<div class="tabs">
+				<div class="lights">
+					<div class="dot dot-close"></div>
+					<div class="dot dot-min"></div>
+					<div class="dot dot-max"></div>
+				</div>
+				<div class="tab">
+					<div class="tab-favicon"></div>
+					My Presentation
+				</div>
+				<span class="tab-new">+</span>
+			</div>
+			<div class="toolbar">
+				<div class="nav">← →</div>
+				<div class="url-bar">example.com/my-presentation</div>
+				<div class="ext-icons">
+					<div class="ext-icon"></div>
+					<div class="ext-icon"></div>
+					<div class="ext-icon"></div>
+				</div>
+			</div>
+			<div class="bookmarks">
+				<span><span class="bm-icon"></span>Dev Docs</span>
+				<span><span class="bm-icon"></span>GitHub</span>
+				<span><span class="bm-icon"></span>Notion</span>
+				<span><span class="bm-icon"></span>Gmail</span>
+			</div>
+		</div>
+		<div class="slide">
+			<div class="slide-heading">Building Modern Web Apps</div>
+			<div class="line" style="width: 88%"></div>
+			<div class="line" style="width: 72%"></div>
+			<div class="line" style="width: 80%"></div>
+			<div class="block">
+				<div class="block-line" style="width: 55%"></div>
+				<div class="block-line" style="width: 78%"></div>
+				<div class="block-line" style="width: 42%"></div>
+				<div class="block-line" style="width: 65%"></div>
+			</div>
+			<div style="margin-top: 8px">
+				<div class="line" style="width: 62%"></div>
+				<div class="line" style="width: 48%"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="arrow">
+	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+		<path d="M5 12h14M13 6l6 6-6 6"/>
+	</svg>
+	<span class="arrow-label">Unbar</span>
+</div>
+
+<div class="group">
+	<span class="tag tag-after">After</span>
+	<div class="win win-after">
+		<div class="titlebar">
+			<div class="lights">
+				<div class="dot dot-close"></div>
+				<div class="dot dot-min"></div>
+				<div class="dot dot-max"></div>
+			</div>
+			<span class="titlebar-text">My Presentation</span>
+		</div>
+		<div class="space-zone">
+			<div class="slide" style="padding-top: 20px; padding-bottom: 20px;">
+				<div class="slide-heading">Building Modern Web Apps</div>
+				<div class="line" style="width: 88%"></div>
+				<div class="line" style="width: 72%"></div>
+				<div class="line" style="width: 80%"></div>
+				<div class="block">
+					<div class="block-line" style="width: 55%"></div>
+					<div class="block-line" style="width: 78%"></div>
+					<div class="block-line" style="width: 42%"></div>
+					<div class="block-line" style="width: 65%"></div>
+				</div>
+				<div style="margin-top: 8px">
+					<div class="line" style="width: 62%"></div>
+					<div class="line" style="width: 48%"></div>
+					<div class="line" style="width: 74%"></div>
+					<div class="line" style="width: 56%"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
