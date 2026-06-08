@@ -277,7 +277,7 @@ function render () {
     </button>
   </div>`;
 
-	root.innerHTML = auto + html;
+	root.innerHTML = auto + '<hr class="divider">' + html;
 	if (editing >= 0) {
 		syncChain();
 	}
