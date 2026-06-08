@@ -25,7 +25,7 @@ Chrome removed the ability to hide the address bar years ago (the old `Compact N
 
 ## Privacy
 
-Unbar collects no data. No analytics, no tracking, no network requests. Its only permission, `activeTab`, is scoped to the tab you explicitly act on. See [PRIVACY.md](PRIVACY.md).
+Unbar collects no data. No analytics, no tracking, no network requests. It uses two permissions: `activeTab` (scoped to the tab you explicitly act on) and `storage` (to persist your presets locally). See [PRIVACY.md](PRIVACY.md).
 
 ## Install
 
@@ -71,10 +71,7 @@ unbar/
 │   ├── popup.html        # popup markup + styles
 │   ├── popup.js          # popup logic
 │   └── icons/
-├── store/                # Chrome Web Store listing assets
-│   ├── tile-440x280.png
-│   ├── screenshot-1280x800.png
-│   └── listing.md
+├── store/                # Chrome Web Store listing assets & screenshots
 ├── build.sh
 ├── PRIVACY.md
 └── LICENSE
