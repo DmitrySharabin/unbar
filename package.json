@@ -1,0 +1,16 @@
+{
+	"name": "unbar",
+	"version": "1.0.0",
+	"description": "Pop the current tab into a clean window — no address bar, no tabs.",
+	"author": "Dmitry Sharabin",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/DmitrySharabin/unbar.git"
+	},
+	"devDependencies": {
+		"prettier-plugin-brace-style": "latest",
+		"prettier-plugin-merge": "latest",
+		"prettier-plugin-space-before-function-paren": "latest"
+	}
+}

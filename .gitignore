@@ -1,6 +1,10 @@
 # Build output
 unbar.zip
 
+# Dependencies
+node_modules/
+package-lock.json
+
 # OS
 .DS_Store
 Thumbs.db
@@ -9,3 +13,6 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+
+# Playwright
+.playwright-mcp/
