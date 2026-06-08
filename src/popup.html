@@ -43,13 +43,13 @@ body {
   flex-shrink: 0;
 }
 .label { flex: 1; }
-.dim { font-size: 11px; color: #8a95a5; }
+.dim { font-size: 11px; color: #8a95a5; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 80px; }
 .star { font-size: 11px; color: #4A90D9; }
 .edit-btn {
   display: none;
   border: none; background: none;
   color: #8a95a5; font-size: 14px;
-  cursor: pointer; padding: 6px 8px; margin: -6px -8px;
+  cursor: pointer; padding: 6px 8px; margin: -6px -8px -6px 2px;
 }
 .row:hover .edit-btn { display: inline-flex; }
 .edit-btn:hover { color: #3a7bc8; background: #d0e2ff; border-radius: 4px; }
