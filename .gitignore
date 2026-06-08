@@ -1,0 +1,11 @@
+# Build output
+unbar.zip
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp

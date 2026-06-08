@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 268px;
+  font-family: system-ui, -apple-system, sans-serif;
+  padding: 6px;
+  background: #fff;
+  color: #1a1a1a;
+}
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  width: 100%;
+  font: inherit;
+  font-size: 13px;
+  color: inherit;
+  text-align: left;
+}
+.row:hover, .row:focus-visible { background: #f0f4f8; outline: none; }
+.row:active { background: #e2e8f0; }
+.row.empty-slot { opacity: 0.45; }
+.row.empty-slot .label { font-style: italic; color: #8a95a5; }
+.key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px; height: 20px;
+  border-radius: 4px;
+  background: #e8edf2;
+  font-size: 11px; font-weight: 600;
+  color: #5a6a7a;
+  flex-shrink: 0;
+}
+.label { flex: 1; }
+.dim { font-size: 11px; color: #8a95a5; }
+.star { font-size: 11px; color: #4A90D9; }
+.edit-btn {
+  display: none;
+  border: none; background: none;
+  color: #8a95a5; font-size: 14px;
+  cursor: pointer; padding: 0 2px;
+}
+.row:hover .edit-btn { display: inline-flex; }
+.edit-btn:hover { color: #4A90D9; }
+
+.editor {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #4A90D9;
+  background: #f0f6fc;
+  margin: 2px 0;
+}
+.ed-sizes {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+.ed-sizes input[type="number"] {
+  width: 62px;
+  padding: 4px 6px;
+  border: 1px solid #d0d7de;
+  border-radius: 4px;
+  font: inherit; font-size: 12px;
+  text-align: center;
+}
+.ed-sizes input:focus { outline: none; border-color: #4A90D9; }
+.chain-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  cursor: pointer;
+  border: none; background: none;
+  padding: 2px 0;
+  color: #8a95a5;
+}
+.chain-btn.locked { color: #4A90D9; }
+.ratio-label {
+  font-size: 10px;
+  color: #4A90D9;
+  min-width: 28px;
+  white-space: nowrap;
+}
+.ed-label {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.ed-label input {
+  flex: 1;
+  padding: 4px 6px;
+  border: 1px solid #d0d7de;
+  border-radius: 4px;
+  font: inherit; font-size: 12px;
+}
+.ed-label input:focus { outline: none; border-color: #4A90D9; }
+.ed-actions {
+  display: flex;
+  gap: 6px;
+}
+.ed-actions button {
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px;
+  font: inherit; font-size: 11px;
+  cursor: pointer;
+}
+.btn-save { flex: 1; background: #4A90D9; color: #fff; }
+.btn-save:hover { background: #3a7bc8; }
+.btn-cancel { background: #e8edf2; color: #5a6a7a; }
+.btn-cancel:hover { background: #d8dfe8; }
+.btn-clear { background: none; color: #b0b8c4; padding: 4px 6px; display: inline-flex; align-items: center; }
+.btn-clear:hover { color: #c44; background: #fde8e8; }
+.hint {
+  padding: 6px 10px;
+  font-size: 10px;
+  color: #a0aab4;
+}
+</style>
+</head>
+<body>
+  <div id="slots"></div>
+  <div class="hint" id="shortcut-hint"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
