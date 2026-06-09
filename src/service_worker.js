@@ -9,14 +9,14 @@ chrome.commands.onCommand.addListener(async command => {
 	}
 
 	const data = await chrome.storage.local.get(["slots", "defaultSlot", "width", "height"]);
-	let width = data.width || 1280;
-	let height = data.height || 800;
+	let width = data.width ?? 1280;
+	let height = data.height ?? 800;
 
 	if (data.slots && data.defaultSlot != null) {
 		const slot = data.slots[data.defaultSlot];
 		if (slot) {
-			width = slot.w;
-			height = slot.h;
+			width = slot.width;
+			height = slot.height;
 		}
 	}
 

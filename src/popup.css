@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
 :root {
 	--accent: oklch(0.64 0.13 250);
 	--danger: oklch(0.58 0.19 27);
@@ -9,7 +15,6 @@
 }
 
 button {
-	box-sizing: border-box;
 	font: inherit;
 	border: none;
 	background: none;
@@ -19,20 +24,22 @@ button {
 }
 
 input {
-	box-sizing: border-box;
 	font: inherit;
 }
 
 body {
 	margin: 0;
-	width: 268px;
-	font-family:
-		system-ui,
-		-apple-system,
-		sans-serif;
+	inline-size: 280px;
+	font-family: system-ui, sans-serif;
 	padding: 0.375rem;
 	background: white;
 	color: var(--text);
+}
+
+menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 .row {
@@ -94,7 +101,6 @@ kbd {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	box-sizing: border-box;
 	inline-size: 1.375rem;
 	block-size: 1.375rem;
 	border-radius: 0.25rem;
@@ -138,12 +144,7 @@ kbd {
 	padding: 0.375rem 0.5rem;
 	margin: -0.375rem -0.5rem -0.375rem 0.125rem;
 
-	&:hover {
-		color: color-mix(in oklch, var(--accent), black 15%);
-		background: color-mix(in oklch, var(--accent), white 70%);
-		border-radius: 0.25rem;
-	}
-
+	&:hover,
 	&:focus-visible {
 		outline: none;
 		color: color-mix(in oklch, var(--accent), black 15%);
@@ -169,6 +170,10 @@ kbd {
 			outline: none;
 			border-color: var(--accent);
 		}
+
+		&:user-invalid {
+			border-color: var(--danger);
+		}
 	}
 
 	& .sizes {
@@ -190,12 +195,24 @@ kbd {
 			padding: 0.125rem 0;
 			color: var(--text-muted);
 
-			&.locked {
+			& .linked {
+				display: none;
+			}
+
+			&[aria-pressed="true"] {
 				color: var(--accent);
+
+				& .linked {
+					display: block;
+				}
+
+				& .unlinked {
+					display: none;
+				}
 			}
 		}
 
-		& .ratio-label {
+		& output {
 			font-size: 0.625rem;
 			color: var(--accent);
 			min-inline-size: 1.75rem;
@@ -203,7 +220,7 @@ kbd {
 		}
 	}
 
-	& .label {
+	& label {
 		display: flex;
 		gap: 0.375rem;
 		margin-block-end: 0.375rem;
@@ -213,7 +230,7 @@ kbd {
 		}
 	}
 
-	& .actions {
+	& footer {
 		display: flex;
 		gap: 0.375rem;
 
@@ -242,7 +259,7 @@ kbd {
 			}
 		}
 
-		& .delete {
+		& .remove {
 			margin-inline-start: auto;
 			color: color-mix(in oklch, var(--text-muted), white 30%);
 			padding: 0.375rem 0.5rem;
