@@ -20,8 +20,8 @@ Chrome removed the ability to hide the address bar years ago (the old `Compact N
 
 - **One-click unbar** — click the toolbar icon, pick a size, done.
 - **Fit screen** — key `0` detects the current monitor's available area and opens the window at exactly that size. Always listed first in the popup.
-- **Size presets** — keys `1`–`9` select a resolution. Four sensible defaults out of the box (1280×800, 1920×1080, 1024×768, 1440×900).
-- **Fully editable** — every preset slot can be edited in place: dimensions and label. Up to nine. The default (★) is whichever preset you used last (including Fit screen).
+- **Size presets** — keys `1`–`9` select a resolution, arrow keys navigate between rows. Four sensible defaults out of the box (1280×800, 1920×1080, 1024×768, 1440×900).
+- **Fully editable** — every preset slot can be edited in place: dimensions and label. Up to nine. Press Escape to cancel. The default (★) is whichever preset you used last (including Fit screen).
 - **Aspect-ratio lock** — a chain toggle links width and height so changing one updates the other. Recognizes common ratios (16:9, 16:10, 4:3, 21:9, 3:2, 5:4, 1:1, 32:9).
 - **Keyboard shortcut** — `Ctrl+Shift+U` (Windows/Linux) or `Cmd+Shift+U` (macOS) instantly unbars at the last-used size, no popup. Remap at `chrome://extensions/shortcuts`.
 - **Persistent** — your presets are saved across sessions via `chrome.storage.local`.

@@ -24,7 +24,7 @@ HOW TO USE
 That's it. No configuration required.
 
 FEATURES
-• Size presets on number keys 1–9, fully editable in place.
+• Size presets on number keys 1–9, fully editable in place. Arrow keys and full keyboard navigation.
 • Aspect-ratio lock that recognizes common ratios (16:9, 16:10, 4:3, 21:9, and more).
 • Keyboard shortcut for instant unbar at your last-used size.
 • Presets saved across sessions.

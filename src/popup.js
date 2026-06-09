@@ -107,8 +107,14 @@ function openEditor (index) {
 }
 
 function closeEditor () {
+	const index = editing;
 	editing = -1;
 	render();
+
+	const target =
+		document.querySelector(`[data-action="row"][data-index="${index}"]`) ??
+		document.querySelector("[data-action]");
+	target?.focus();
 }
 
 async function save (form) {
@@ -329,7 +335,11 @@ function bindEvents () {
 	});
 
 	root.addEventListener("keydown", event => {
-		if (event.key === "Enter" && event.target.name === "width") {
+		if (event.key === "Escape" && editing >= 0) {
+			event.preventDefault();
+			closeEditor();
+		}
+		else if (event.key === "Enter" && event.target.name === "width") {
 			event.preventDefault();
 			document.querySelector("form").elements.height.focus();
 		}
@@ -341,6 +351,22 @@ document.addEventListener("keydown", event => {
 		return;
 	}
 	if (event.target.tagName === "INPUT") {
+		return;
+	}
+
+	if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+		const rows = [...document.querySelectorAll(".row")];
+		const current = rows.findIndex(row => row.contains(document.activeElement));
+		if (current < 0) {
+			return;
+		}
+
+		event.preventDefault();
+		const next =
+			event.key === "ArrowDown"
+				? (current + 1) % rows.length
+				: (current - 1 + rows.length) % rows.length;
+		rows[next].querySelector("button")?.focus();
 		return;
 	}
 
@@ -369,6 +395,7 @@ document.addEventListener("keydown", event => {
 await loadSlots();
 bindEvents();
 render();
+document.querySelector(".row button")?.focus();
 
 const commands = await chrome.commands.getAll();
 const command = commands.find(cmd => cmd.name === "quick-unbar");
