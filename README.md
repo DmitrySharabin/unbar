@@ -2,15 +2,15 @@
 
 **Pop the current tab into a clean window — no address bar, no tabs.**
 
-<p align="center"><img src="store/screenshot-readme.png" alt="Before and after: browser chrome removed" width="640"></p>
+<p align="center"><img src="store/screenshot-readme.png" alt="Before and after: browser UI removed" width="640"></p>
 
 Unbar moves your active Chrome tab into a minimal popup window with no address bar, tab strip, or bookmarks bar. The page doesn't reload, so scroll position, form input, and JavaScript state are all preserved — it's the same tab, just in a cleaner frame.
 
 Built originally to give [Inspire.js](https://inspirejs.org) presentations a distraction-free presenter/projector window, but it works on any page.
 
-| Pick a size | Hover to edit | Edit a preset |
+| Pick a size | Hover a preset | Edit a preset |
 |:-----------:|:-------------:|:-------------:|
-| ![Preset list](store/screenshot-popup.png) | ![Hover state](store/screenshot-hover.png) | ![Preset editor](store/screenshot-editor.png) |
+| <img src="store/screenshot-popup.png" width="280" alt="Preset list"> | <img src="store/screenshot-hover.png" width="280" alt="Hover state"> | <img src="store/screenshot-editor.png" width="280" alt="Preset editor"> |
 
 ## Why
 
@@ -46,13 +46,13 @@ _(Link to be added once published.)_
 3. Enable **Developer mode** (top-right toggle).
 4. Click **Load unpacked** and select the `src/` folder.
 
-Requires Chrome 120+ (for CSS nesting support).
+Requires Chrome 120+.
 
 ## Usage
 
 1. Navigate to any page.
 2. Click the Unbar icon (or press `Ctrl+Shift+U` / `Cmd+Shift+U`).
-3. Choose a size — the active tab moves into a chromeless window.
+3. Choose a size — the active tab moves into a clean window.
 
 To edit a preset, hover a row and click the pencil. To remove one, open it and click the trash icon; remaining presets shift up.
 

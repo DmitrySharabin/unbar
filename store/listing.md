@@ -19,7 +19,7 @@ Unbar moves your current tab into a minimal popup window — no address bar, no 
 HOW TO USE
 1. Navigate to any page.
 2. Click the Unbar icon in the toolbar.
-3. Pick a size — the tab moves into a clean, chromeless window.
+3. Pick a size — the tab moves into a clean window.
 
 That's it. No configuration required.
 
