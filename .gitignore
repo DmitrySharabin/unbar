@@ -16,3 +16,6 @@ Thumbs.db
 
 # Playwright
 .playwright-mcp/
+
+# Agents
+.superpowers/
