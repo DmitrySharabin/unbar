@@ -11,6 +11,7 @@
 	},
 	"scripts": {
 		"assets": "node tools/render-assets.mjs",
+		"prebuild": "npm run assets",
 		"build": "./tools/build.sh"
 	},
 	"devDependencies": {
