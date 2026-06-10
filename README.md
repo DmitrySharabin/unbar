@@ -61,7 +61,7 @@ To edit a preset, hover a row and click the pencil. To remove one, open it and c
 To produce the `.zip` for Chrome Web Store submission:
 
 ```bash
-./build.sh
+npm run build
 ```
 
 This zips the contents of `src/` into `unbar.zip` at the repo root.

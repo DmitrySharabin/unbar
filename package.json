@@ -10,7 +10,8 @@
 		"url": "https://github.com/DmitrySharabin/unbar.git"
 	},
 	"scripts": {
-		"assets": "node tools/render-assets.mjs"
+		"assets": "node tools/render-assets.mjs",
+		"build": "./tools/build.sh"
 	},
 	"devDependencies": {
 		"prettier-plugin-brace-style": "latest",
