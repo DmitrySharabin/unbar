@@ -43,7 +43,7 @@ Unbar collects zero data. No analytics, no tracking, no network requests. Its on
 
 ## Category
 
-Productivity
+Productivity > Tools
 
 ## Language
 
@@ -55,3 +55,22 @@ English
 - Promotional tile (440×280): store/tile-440x280.png
 - Screenshot (1280×800): store/screenshot-1280x800.png
 - Privacy policy URL: https://github.com/DmitrySharabin/unbar/blob/main/PRIVACY.md
+
+## Privacy practices
+
+### Single purpose
+
+Opens the current tab in a clean popup window (no address bar, no tab strip) at a user-chosen size.
+
+### Permission justifications
+
+- **activeTab**: Used to get the current tab's ID so it can be moved into a new popup window via chrome.windows.create({ tabId }).
+- **storage**: Stores the user's window-size presets and default preset selection locally. No data is sent externally.
+
+### Remote code
+
+This extension does not use remote code. All JavaScript is bundled in the extension package.
+
+### Data usage certification
+
+Certify that data usage complies with the Developer Program Policies. Unbar collects no user data — no analytics, no tracking, no network requests.
