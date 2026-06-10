@@ -66,6 +66,16 @@ To produce the `.zip` for Chrome Web Store submission:
 
 This zips the contents of `src/` into `unbar.zip` at the repo root.
 
+## Assets
+
+The PNG icons (`src/icons/`) and the store tile (`store/tile-440x280.png`) are generated from the SVG masters in `assets/`. The SVGs are the editable sources; the PNGs are build artifacts. To regenerate after editing a master:
+
+```bash
+npm install   # first time only, pulls in sharp
+npm run assets
+```
+
+Each PNG is rasterized from a high-resolution render and downscaled with Lanczos resampling, which keeps edges crisp at every size. The tile stays at the store-required 440×280.
 
 ## License
 

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 280" width="440" height="280">
+  <rect width="440" height="280" fill="#F0F4F8"/>
+  <g transform="translate(170, 40) scale(0.78)">
+    <rect x="8" y="16" width="112" height="96" rx="10" fill="none" stroke="#4A90D9" stroke-width="7"/>
+    <circle cx="28" cy="34" r="6" fill="#E74C3C"/>
+    <circle cx="46" cy="34" r="6" fill="#F5A623"/>
+    <circle cx="64" cy="34" r="6" fill="#7ED321"/>
+    <line x1="8" y1="50" x2="120" y2="50" stroke="#4A90D9" stroke-width="3" stroke-dasharray="6 4" opacity="0.35"/>
+    <rect x="24" y="64" width="80" height="7" rx="3.5" fill="#4A90D9" opacity="0.35"/>
+    <rect x="24" y="80" width="56" height="7" rx="3.5" fill="#4A90D9" opacity="0.25"/>
+    <rect x="24" y="96" width="68" height="7" rx="3.5" fill="#4A90D9" opacity="0.3"/>
+  </g>
+  <text x="220" y="190" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="600" fill="#2C3E50">Unbar</text>
+  <text x="220" y="225" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#7F8C9B">Pop any tab into a clean window</text>
+  <text x="220" y="248" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#7F8C9B">No address bar. No tabs. Just content.</text>
+</svg>
