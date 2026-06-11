@@ -34,7 +34,7 @@ Unbar collects no data. No analytics, no tracking, no network requests. It uses 
 
 ### From the Chrome Web Store
 
-_(Link to be added once published.)_
+[Install Unbar](https://chromewebstore.google.com/detail/unbar/ljphbcinfommkbbghbffnobffehmehnj) from the Chrome Web Store.
 
 ### From source (development)
 

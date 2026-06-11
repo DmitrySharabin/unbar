@@ -85,6 +85,16 @@ menu {
 		clip-path: none;
 		overflow: visible;
 	}
+
+	menu:has(.row:hover) > &:not(:hover):has(:focus-visible) {
+		background: transparent;
+
+		& .edit {
+			position: absolute;
+			clip-path: inset(50%);
+			overflow: hidden;
+		}
+	}
 }
 
 .divider {

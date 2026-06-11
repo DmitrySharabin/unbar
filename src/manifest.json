@@ -2,7 +2,7 @@
 	"manifest_version": 3,
 	"minimum_chrome_version": "120",
 	"name": "Unbar",
-	"version": "1.0",
+	"version": "1.1",
 	"description": "Pop the current tab into a clean window — no address bar, no tabs.",
 	"permissions": ["activeTab", "storage"],
 	"action": {

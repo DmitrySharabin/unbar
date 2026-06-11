@@ -395,7 +395,7 @@ document.addEventListener("keydown", event => {
 await loadSlots();
 bindEvents();
 render();
-document.querySelector(".row button")?.focus();
+document.querySelector(".star")?.closest(".row")?.querySelector("button")?.focus();
 
 const commands = await chrome.commands.getAll();
 const command = commands.find(cmd => cmd.name === "quick-unbar");
